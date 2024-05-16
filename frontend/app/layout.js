@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
             <RainbowKitProvider>
               {" "}
               {children}
-              <div className="fixed top-0 right-0 mt-4 mr-1">
+              <div className="absolute top-0 right-0 mt-10 mr-4 w-[200px]">
                 <ConnectButton />
               </div>
               <Toaster position="bottom-right" richColors />

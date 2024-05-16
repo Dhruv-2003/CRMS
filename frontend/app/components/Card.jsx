@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function Card(props) {
   return (
-    <section className="max-w-[350px] h-full mx-4 my-4 shadow-lg">
+    <section className="max-w-[350px] mx-4 my-4 shadow-lg h-[500px] bg-[#B4D4FF] rounded-b-xl relative">
       <div>
         <Image src={Book} className="rounded-t-xl" />
       </div>
@@ -21,13 +21,13 @@ function Card(props) {
         </p>
         <div className="flex justify-end items-center">
           {props.isTeacher ? (
-            <button className="bg-black text-white py-2 w-80 rounded-full mr-4 mt-4">
+            <button className="bg-black text-white py-2 w-80 rounded-full mr-4 mt-4 absolute bottom-4 right-0">
               <Link href={`/teacher/assignment/${props.course.id}`}>
                 Add Assignment
               </Link>
             </button>
           ) : (
-            <button className="bg-black text-white py-2 w-24 rounded-full mr-4 mt-4">
+            <button className="bg-black text-white py-2 w-24 rounded-full mr-4 mt-4 absolute bottom-4 right-0">
               <Link href={`/student/coursedetails/${props.course.id}`}>
                 View
               </Link>
