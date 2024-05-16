@@ -53,7 +53,7 @@ const TNavbar = () => {
             }`}
           >
             <Image src={star} width={27} height={27} />
-            <Link href="/teacher/assignment">
+            <Link href="/teacher">
               <span className="block ml-3">Add Assignments</span>
             </Link>
           </button>

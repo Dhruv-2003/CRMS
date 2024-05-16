@@ -95,11 +95,14 @@ const Page = ({ params }) => {
     }
   }, []);
 
+  const randomId = Math.random().toFixed(0) % 12;
+  const imageLink = randomId < 12 ? `/${(randomId % 12) + 1}.png` : star;
+
   return (
     <div className="flex">
       <section className="max-w-[450px] h-full ml-20 mt-20 pt-14 shadow-lg">
         <div>
-          <Image src={Book} className="rounded-t-xl" />
+          <img src={imageLink} className="rounded-t-xl w-full" />
         </div>
         {course ? (
           <div className="bg-[#B4D4FF] rounded-b-xl py-4 text-[#16191D]">

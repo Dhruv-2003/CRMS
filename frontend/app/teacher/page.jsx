@@ -33,8 +33,8 @@ const Page = () => {
       <h2 className="text-2xl mt-14 ml-10 text-[#86B6F6]">Popular courses</h2>
       <div className="flex justify-around w-full flex-wrap mt-10 ">
         {courses ? (
-          courses.map((course) => {
-            return <Card course={course} isTeacher={true} />;
+          courses.map((course, id) => {
+            return <Card course={course} isTeacher={true} id={id} />;
           })
         ) : (
           <div>

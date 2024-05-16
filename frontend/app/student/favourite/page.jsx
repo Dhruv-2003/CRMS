@@ -15,7 +15,7 @@ const Page = () => {
       console.log("getting courses");
       const courses = await getAllCourses();
       console.log(courses);
-      setCourses([courses[0], courses[3], courses[2]]);
+      setCourses([courses[0], courses[1], courses[2]]);
       toast.dismiss();
     } catch (e) {
       console.log(e);
@@ -33,8 +33,8 @@ const Page = () => {
       <h2 className="text-2xl mt-14 ml-10 text-[#86B6F6]">Favourite courses</h2>
       <div className="flex justify-around w-full flex-wrap mt-10 ">
         {courses ? (
-          courses.map((course) => {
-            return <Card course={course} />;
+          courses.map((course, key) => {
+            return <Card course={course} id={key} />;
           })
         ) : (
           <div>

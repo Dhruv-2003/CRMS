@@ -4,15 +4,19 @@ import star from "../assets/images/star.svg";
 import Image from "next/image";
 
 function Card(props) {
+  const imageLink = props.id < 12 ? `/${(props.id % 12) + 1}.png` : star;
+
+  // https://firebasestorage.googleapis.com/v0/b/next-app-4bebf.appspot.com/o/image%2F${props.key}.png?alt=media&token=af09424f-7ae7-4c6a-8aa6-1b4250a9466c
+
   return (
     <section className="max-w-[350px] mx-4 my-4 shadow-lg h-[500px] bg-[#B4D4FF] rounded-b-xl relative">
       <div>
-        <Image src={Book} className="rounded-t-xl" />
+        <img src={imageLink} className="rounded-t-xl w-full" />
       </div>
       <div className="bg-[#B4D4FF] rounded-b-xl py-4 text-[#16191D]">
         <div className="flex justify-between pt-4 px-4">
           <h2>{props.course ? props.course.name : "Course Title"}</h2>
-          <Image src={star} className="" />
+          <Image src={star} alt="img" className="" />
         </div>
         <p className="mt-4 px-4">
           {props.course
