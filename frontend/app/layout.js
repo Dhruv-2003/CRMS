@@ -30,8 +30,38 @@ const poppins = Poppins({
 // };
 
 const queryClient = new QueryClient();
+import { useAuthState } from "react-firebase-hooks/auth";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import { auth } from "./firebase/config";
+import { getAuth } from "firebase/auth";
 
 export default function RootLayout({ children }) {
+  // const [user, loading, error] = useAuthState(auth);
+
+  // console.log(user);
+
+  // const getUser = () => {
+  //   const auth = getAuth();
+  //   const user = auth.currentUser;
+
+  //   console.log(user);
+  //   if (user !== null) {
+  //     // User is signed in, see docs for a list of available properties
+  //     // https://firebase.google.com/docs/reference/js/firebase.User
+  //     // ...
+  //     const uid = user.uid;
+  //     const displayName = user.displayName;
+  //     const email = user.email;
+  //     const photoURL = user.photoURL;
+  //     const emailVerified = user.emailVerified;
+  //     return user;
+  //   } else {
+  //     // No user is signed in.
+  //   }
+  // };
+
+  // getUser();
+
   return (
     <html lang="en">
       <body className={`${poppins.className} h-screen w-full`}>
@@ -42,6 +72,8 @@ export default function RootLayout({ children }) {
               {children}
               <div className="absolute top-0 right-0 mt-10 mr-4 w-[200px]">
                 <ConnectButton />
+                {/* <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} /> */}
+                {/* {user && user.displayName} */}
               </div>
               <Toaster position="bottom-right" richColors />
             </RainbowKitProvider>

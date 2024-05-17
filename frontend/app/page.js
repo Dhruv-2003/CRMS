@@ -4,6 +4,15 @@ import Image from "next/image";
 import logo from "../app/assets/images/logo.svg";
 import bg from "../app/assets/images/bg.svg";
 import Link from "next/link";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import { auth, app } from "./firebase/config";
+import { GoogleAuthProvider } from "firebase/auth";
+
+export const uiConfig = {
+  // signInFlow: "popup",
+  signInSuccessUrl: "/",
+  signinOptions: [GoogleAuthProvider.PROVIDER_ID],
+};
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -95,6 +104,7 @@ export default function Home() {
               </div>
               <div className="p-6 text-lg">
                 <div className="mt-4 flex flex-col justify-center items-center">
+                  <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />
                   <button
                     className=" mr-15 mt-8 bg-[#5AA0FD] py-2 px-4 rounded-full text-white w-4/5"
                     onClick={() => {
